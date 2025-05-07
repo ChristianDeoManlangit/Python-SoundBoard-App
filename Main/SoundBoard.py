@@ -11,7 +11,13 @@ class SoundboardApp:
     def __init__(self):
         self.root = ctk.CTk()
         self.root.title("Soundboard")
-        self.root.geometry("1000x700")
+        # Center the window on the screen
+        width = 1000
+        height = 700
+        self.root.update_idletasks()
+        x = (self.root.winfo_screenwidth() // 2) - (width // 2)
+        y = (self.root.winfo_screenheight() // 2) - (height // 2)
+        self.root.geometry(f"{width}x{height}+{x}+{y}")
 
         # Set theme
         ctk.set_appearance_mode("dark")
